@@ -1,3 +1,4 @@
 rootProject.name = "BoilerPlateAndroid"
 include ':app'
 include ':core'
+include ':mylibrary'
