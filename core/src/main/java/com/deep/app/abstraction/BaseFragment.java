@@ -1,13 +1,13 @@
 package com.deep.app.abstraction;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.deep.app.analytics.Analytics;
+import androidx.fragment.app.Fragment;
+
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
@@ -17,7 +17,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public abstract class BaseFragment extends Fragment {
 
     private View viewBinding;
-    private FirebaseAnalytics analytics;
+    //private FirebaseAnalytics analytics;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        analytics = FirebaseAnalytics.getInstance(getActivity().getApplicationContext());
+        //analytics = FirebaseAnalytics.getInstance(getActivity().getApplicationContext());
         initView(viewBinding);
         onFragmentReady();
         apiCall();
@@ -50,8 +50,8 @@ public abstract class BaseFragment extends Fragment {
         if (!TextUtils.isEmpty(name)) {
             Bundle bundle = new Bundle();
             bundle.putString("name", name);
-            analytics.logEvent("screen", bundle);
-            Analytics.getInstance().pushScreen(name);
+            //analytics.logEvent("screen", bundle);
+            //Analytics.getInstance().pushScreen(name);
         }
     }
 
@@ -59,11 +59,11 @@ public abstract class BaseFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putString("event", event);
         bundle.putString("label", label);
-        analytics.logEvent(category, bundle);
-        Analytics.getInstance().pushEvent(category, event, label);
+        //analytics.logEvent(category, bundle);
+        //Analytics.getInstance().pushEvent(category, event, label);
     }
 
     protected void trackUserAttribute(String name, String phone, String userDevice, String userId, String token) {
-        Analytics.getInstance().pushUserAttribute(name, phone, userDevice, userId, token);
+        //Analytics.getInstance().pushUserAttribute(name, phone, userDevice, userId, token);
     }
 }

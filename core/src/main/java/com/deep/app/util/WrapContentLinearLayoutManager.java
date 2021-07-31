@@ -2,10 +2,12 @@ package com.deep.app.util;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.deep.app.BuildConfig;
 
@@ -14,7 +16,7 @@ import java.lang.reflect.Field;
 /**
  * Created by gspl on 15/12/15.
  */
-public class WrapContentLinearLayoutManager extends android.support.v7.widget.LinearLayoutManager {
+public class WrapContentLinearLayoutManager extends LinearLayoutManager {
 
     private static final int CHILD_WIDTH = 0;
     private static final int CHILD_HEIGHT = 1;

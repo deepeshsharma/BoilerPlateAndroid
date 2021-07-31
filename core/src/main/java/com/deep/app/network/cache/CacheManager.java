@@ -1,12 +1,11 @@
 package com.deep.app.network.cache;
 
 import android.content.Context;
-
 import com.deep.app.util.StringUtil;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 
 public class CacheManager {
     private static final String TAG = CacheManager.class.getSimpleName();

@@ -1,12 +1,13 @@
 package com.deep.app;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 import com.deep.app.media.IImageLoader;
 import com.deep.app.media.ImageLoader;
 import com.deep.app.network.RetrofitClient;
 import retrofit2.Retrofit;
 
-public abstract class AbstractApplication extends Application {
+public abstract class AbstractApplication extends MultiDexApplication {
 
     protected static IImageLoader imageLoader;
     private static Application app;

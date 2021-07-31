@@ -1,7 +1,8 @@
 package com.deep.app.abstraction.abstraction;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Deepesh Sharma on 6/26/2016.

@@ -1,13 +1,13 @@
 package com.deep.app.abstraction;
 
 import android.app.ProgressDialog;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
-import com.deep.app.analytics.Analytics;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
@@ -19,12 +19,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final String TITLE = "title";
     private ViewDataBinding viewBinding;
     private ProgressDialog progress;
-    private FirebaseAnalytics analytics;
+    //private FirebaseAnalytics analytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        analytics = FirebaseAnalytics.getInstance(getApplicationContext());
+        //analytics = FirebaseAnalytics.getInstance(getApplicationContext());
         preSetContentView();
         viewBinding = DataBindingUtil.setContentView(this, getLayoutId());
         initView(viewBinding);
@@ -58,8 +58,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(name)) {
             Bundle bundle = new Bundle();
             bundle.putString("name", name);
-            analytics.logEvent("screen", bundle);
-            Analytics.getInstance().pushScreen(name);
+            //analytics.logEvent("screen", bundle);
+            //Analytics.getInstance().pushScreen(name);
         }
     }
 
@@ -67,12 +67,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("event", action);
         bundle.putString("label", label);
-        analytics.logEvent(category, bundle);
-        Analytics.getInstance().pushEvent(category, action, label);
+        //analytics.logEvent(category, bundle);
+        //Analytics.getInstance().pushEvent(category, action, label);
     }
 
     protected void trackAttribute(String name, String phone, String userDevice, String userId, String token) {
-        Analytics.getInstance().pushUserAttribute(name, phone, userDevice, userId, token);
+        //Analytics.getInstance().pushUserAttribute(name, phone, userDevice, userId, token);
     }
 
     protected abstract void preSetContentView();

@@ -1,9 +1,9 @@
 package com.deep.app.abstraction.abstraction;
 
-import android.databinding.BaseObservable;
-import android.databinding.BindingAdapter;
 import android.text.TextUtils;
 import android.widget.ImageView;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.BindingAdapter;
 import com.deep.app.util.PicassoCircleTransform;
 import com.squareup.picasso.Picasso;
 
@@ -21,7 +21,7 @@ public class ViewModel extends BaseObservable {
                     .bitmapTransform(new CircleTransform(view.getContext()))
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(view);*/
-            Picasso.with(view.getContext()).load(imageUrl).transform(new PicassoCircleTransform()).into(view);
+            //Picasso.with(view.getContext()).load(imageUrl).transform(new PicassoCircleTransform()).into(view);
         }
     }
 
@@ -34,7 +34,7 @@ public class ViewModel extends BaseObservable {
                     .bitmapTransform(new CircleTransform(view.getContext()))
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(view);*/
-            Picasso.with(view.getContext()).load(imageUrl).into(view);
+            //Picasso.with(view.getContext()).load(imageUrl).into(view);
         }
     }
 }
